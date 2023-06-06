@@ -1,7 +1,10 @@
 package com.github.rshtishi.demo.entity;
 
+import org.springframework.data.relational.core.mapping.Table;
+
 import java.time.LocalDateTime;
 
+@Table("product_details")
 public class ProductDetails {
 	
 	private String createdBy;

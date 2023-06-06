@@ -38,5 +38,5 @@ create table if not exists product_manufacturer
 	manufacturer integer,
 	product integer,
 	primary key( manufacturer,product)
-)
+);
 

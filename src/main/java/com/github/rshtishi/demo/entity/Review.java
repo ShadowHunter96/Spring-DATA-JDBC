@@ -1,5 +1,8 @@
 package com.github.rshtishi.demo.entity;
 
+import org.springframework.data.relational.core.mapping.Table;
+
+@Table("review")
 public class Review {
 	
 	private String comment;

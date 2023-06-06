@@ -4,15 +4,19 @@ import java.time.LocalDate;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
+@Table ("person")
 public class Person {
 	
 	@Id
+	@Column("id")
 	private Long id;
-	@Column("FIRST_NAME")
+	@Column("first_name")
 	private String firstname;
-	@Column("LAST_NAME")
+	@Column("last_name")
 	private String lastname;
+	@Column("birthdate")
 	private LocalDate birthdate;
 	
 	public Person() {
