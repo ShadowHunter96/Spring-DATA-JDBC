@@ -27,4 +27,9 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 	boolean updatePersonName(@Param("id") Long id, @Param("firstname") String firstname,
 			@Param("lastname") String lastname);
 
+	@Query("SELECT COUNT(*) from person")
+	Long countAllPersons();
+
+
+
 }

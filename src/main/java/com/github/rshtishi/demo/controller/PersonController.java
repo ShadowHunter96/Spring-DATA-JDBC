@@ -69,6 +69,13 @@ public class PersonController {
         return "Deleted employee id ";
     }
 
+//    getting count of people in dtb
+    @GetMapping("person/count")
+    public ResponseEntity<Long> getAllPersonsCount(){
+        Long count = personRepository.countAllPersons();
+        return ResponseEntity.ok(count);
+    }
+
 
     }
 
