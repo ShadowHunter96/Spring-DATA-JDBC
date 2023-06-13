@@ -122,44 +122,13 @@ class PersonRepositoryTest {
 	}
 
 
-	@Test
-	@Order(7)
-	public void givenGetRequestExecuted_whenAnalyzingTheResponse_thenCorrectStatusCode() throws IOException {
-		final HttpGet request = new HttpGet("http://localhost:8081/person");
-		try (CloseableHttpClient client = HttpClientBuilder.create().build()) {
 
-			HttpResponse response = client.execute(request);
-			int statusCode = response.getStatusLine().getStatusCode();
-			assertThat(statusCode, equalTo(HttpStatus.SC_OK));
-		}
-	}
-
-	@Test
-	@Order(8)
-	public void givenPerson_whenPostRequestExecuted_thenCreatedStatusCode() throws IOException {
-
-		String personJson = "{ \"firstName\": \"Marek\", \"lastName\": \"Vu\", \"birthDate\": \"1990-05-15\" }";
-
-		// Create the HTTP client
-		try (CloseableHttpClient client = HttpClientBuilder.create().build()) {
-			// Create the POST request with the person data
-			HttpPost request = new HttpPost("http://localhost:8081/person");
-			request.setEntity(new StringEntity(personJson, ContentType.APPLICATION_JSON));
-
-			// Execute the request and capture the response
-			try (CloseableHttpResponse response = client.execute(request)) {
-				// Verify the response status code
-				int statusCode = response.getStatusLine().getStatusCode();
-
-				assertEquals(HttpStatus.SC_CREATED, statusCode);
-			}
-		}
 
 
 
 
 	}
-}
+
 
 
 

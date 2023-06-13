@@ -30,6 +30,14 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 	@Query("SELECT COUNT(*) from person")
 	Long countAllPersons();
 
+	@Modifying
+	@Query("INSERT INTO person(id, first_name, last_name, birthdate) VALUES ( 1,'Rando', 'Shtishi','1992-08-02')")
+	void insertFirstPerson();
+
+	@Modifying
+	@Query("DELETE FROM person WHERE person.first_name = :firstName")
+	void deleteByFirstName(@Param("firstName") String firstName);
+
 
 
 }
